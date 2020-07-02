@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
-public class ZlomModel {
+public class Zlom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

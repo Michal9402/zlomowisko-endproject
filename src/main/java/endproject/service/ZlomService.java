@@ -1,7 +1,7 @@
 package endproject.service;
 
 
-import endproject.model.ZlomModel;
+import endproject.model.Zlom;
 import endproject.repository.ZlomRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +16,15 @@ public class ZlomService {
         this.repo = repo;
     }
 
-    public List<ZlomModel> getAll() {
+    public List<Zlom> getAll() {
         return repo.findAll();
     }
 
-    public void save(ZlomModel zlomModel) {
-        repo.save(zlomModel);
+    public void save(Zlom zlom) {
+        repo.save(zlom);
     }
 
-    public Optional<ZlomModel> getById(Long id) {
+    public Optional<Zlom> getById(Long id) {
         return repo.findById(id);
     }
 
