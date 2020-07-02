@@ -21,6 +21,11 @@
                 <td th:text="${zlom.id}">Numer produktu</td>
                 <td th:text="${zlom.name}">Nazwa</td>
                 <td th:text="${zlom.price}">Cena</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${zlom.id}}">Edytuj</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${zlom.id}}">Usuń</a>
+                </td>
             </tr>
         </tbody>
         </thead>
