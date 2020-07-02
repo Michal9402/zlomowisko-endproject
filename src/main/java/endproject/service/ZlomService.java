@@ -24,8 +24,8 @@ public class ZlomService {
         repo.save(zlom);
     }
 
-    public Optional<Zlom> getById(Long id) {
-        return repo.findById(id);
+    public Zlom getById(Long id) {
+        return repo.findById(id).get();
     }
 
     public void deleteById(Long id) {

@@ -5,3 +5,4 @@ create table if not exists zlom
     price varchar(30) not null
 );
 
+insert into zlom values (1, 'Aluminium', '30,00 pln/kg')

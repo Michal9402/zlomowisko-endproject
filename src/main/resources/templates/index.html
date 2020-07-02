@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Zlomowisko Akademia</title>
@@ -7,13 +7,22 @@
 <body>
 <div align="center">
     <h1>Cennik złomu</h1>
-    <table border="1">
+    <a href="new">Dodaj nowy produkt</a>
+    <table border="1" cellpadding="10">
         <thead>
             <tr>
                 <th>Nr. Produktu</th>
                 <th>Nazwa Produktu</th>
                 <th>Cena</th>
+                <th>Edycja</th>
             </tr>
+        <tbody>
+            <tr th:each="zlom : ${zlomList}">
+                <td th:text="${zlom.id}">Numer produktu</td>
+                <td th:text="${zlom.name}">Nazwa</td>
+                <td th:text="${zlom.price}">Cena</td>
+            </tr>
+        </tbody>
         </thead>
     </table>
 </div>
