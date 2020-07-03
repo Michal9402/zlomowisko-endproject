@@ -2,34 +2,121 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Zlomowisko Akademia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Złomowisko Mirek</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div align="center">
-    <h1>Cennik złomu</h1>
-    <a href="new">Dodaj nowy produkt</a>
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Nr. Produktu</th>
-                <th>Nazwa Produktu</th>
-                <th>Cena</th>
-                <th>Edycja</th>
-            </tr>
-        <tbody>
-            <tr th:each="zlom : ${zlomList}">
-                <td th:text="${zlom.id}">Numer produktu</td>
-                <td th:text="${zlom.name}">Nazwa</td>
-                <td th:text="${zlom.price}">Cena</td>
-                <td>
-                    <a th:href="@{'/edit/' + ${zlom.id}}">Edytuj</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/delete/' + ${zlom.id}}">Usuń</a>
-                </td>
-            </tr>
-        </tbody>
-        </thead>
-    </table>
-</div>
+
+                        <!--------------- NAVBAR ------------------>
+    <header>
+        <nav class="navbar navbar-dark bg-secondary navbar-expand-sm">
+            <a class="navbar-brand" href="#"><img src="img/crane.png" width="40"
+                                                   class="d-inline-block mr-1 align-bottom"
+            >
+                ZlomowiskoMirek.pl</a>
+            <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#mainmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainmenu" >
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#onas">O nas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cennik">Cennik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontakt">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+<!--      TITLE SCREEN TITLE SCREEN                  -->
+    <main>
+            <div class="title-screen row align-items-center">
+                <div class="col-12 title-text text-center ">
+                    <h1>ZlomowiskoMirek.pl</h1>
+                    <p>Najlepsze złomowisko na mazowszu! <br>
+                        -Niesamowicie konkurencyjne ceny! <br>
+                        -Fachowa obsługa! <br>
+                        -Prawdziwy profesjonalizm!
+                    </p>
+                </div>
+            </div>
+<!--        O NAS section -->
+        <div class="container">
+            <div class="row mt-5 align-items-center">
+                <div class="col-12 navText text-center">
+                     <h1 id="onas">O NAS</h1>
+                </div>
+                <div class="col-md-7">
+                    <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem
+                        Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+                        Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+                        Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+                        Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+                        Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+                        Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+                        Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+                </div>
+                <aside class="col-md-5">
+                    <img class="img-thumbnail"
+                            src="https://as2.ftcdn.net/jpg/00/17/46/85/500_F_17468581_tlC6zOrBUoMFZCe51PG1diAgdid2WIsG.jpg">
+                </aside>
+            </div>
+        </div>
+<!--        CENNIK ZLOMU-->
+        <div class="container">
+            <div class="row mt-5 align-items-center" >
+                <div class="col-12 text-center">
+                    <h1 id="cennik">Cennik złomu</h1>
+                </div>
+                <div class="cal 12 d-block mx-auto">
+                    <table border="1" cellpadding="10">
+                    <thead>
+                        <tr>
+                            <th>Nr. Produktu</th>
+                            <th>Nazwa Produktu</th>
+                            <th>Cena</th>
+                        </tr>
+                    <tbody>
+                        <tr th:each="zlom : ${zlomList}">
+                            <td th:text="${zlom.id}">Numer produktu</td>
+                            <td th:text="${zlom.name}">Nazwa</td>
+                            <td th:text="${zlom.price}">Cena</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+<!--        FOOTER-->
+        <footer class="bg-secondary">
+            <div class="row mt-5 mb-1 align-items-left">
+                <div class="col-md-6 text-left m-5">
+                    <h2 id="kontakt">Kontakt</h2>
+                    <h5>PHU Mirosław Cwaniak</h5>
+                    <p>Ul. Złomiarska 34 <br>
+                    00-322 Warszawa <br>
+                    NIP: 1111111111 <br><br>
+                    Telefon: 555 333 222</p>
+                </div>
+
+            </div>
+
+        </footer>
+    </main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

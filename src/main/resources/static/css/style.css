@@ -1,0 +1,21 @@
+body {
+    background-color: #856404;
+    color: white;
+    height: 100%;
+    font-family: Helvetica;
+
+}
+
+.title-screen {
+    height: 500px;
+    width: auto;
+    background-image: url("https://www.claimsjournal.com/app/uploads/2019/11/bigstock-Wrecked-Vehicles-On-The-Junkya-305526229.jpg"); !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title-text {
+    background-color: white;
+    opacity: 70%;
+    color: black;
+}

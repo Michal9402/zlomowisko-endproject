@@ -26,6 +26,13 @@ public class ZlomController {
         return "index";
     }
 
+    @RequestMapping("/pricelist")
+    public String pricelistPage(Model model) {
+        List<Zlom> zlomList = serv.getAll();
+        model.addAttribute("zlomList", zlomList);
+        return "pricelist";
+    }
+
     @RequestMapping("/new")
     public String showNewZlomProductForm(Model model) {
         Zlom zlom = new Zlom();
