@@ -23,6 +23,7 @@ public class MyUserDetails implements UserDetails {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
         for (Role role : roles) {
+            System.out.println(role.getName());
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
@@ -56,7 +57,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return user.isEnabled();
+        return true;
     }
 
 }
