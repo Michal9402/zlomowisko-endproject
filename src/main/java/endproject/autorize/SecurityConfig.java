@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .successHandler((res, req, auth) -> { // rozszerzona wersja tego co ponizej
-                    req.sendRedirect("/");
+                    req.sendRedirect("/pricelist");
                 })
               //  .successForwardUrl("/") //przekierowanie po udanym zalogowaniiu
                 .failureForwardUrl("/login?error=wrong login or password!")
@@ -54,6 +54,34 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     }
+
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        http.cors().disable(); //wylaczamy zabezpieczenia przed np DDOS
+//        http.csrf().disable(); //wylaczamy zabezpieczenia przed np DDOS
+//
+//        http
+//                .authorizeRequests() //wlaczenie filtrowania requestow z sieci
+//                .antMatchers("/").permitAll() //wylaczenie filtru na te konkretne urle
+//                .and()
+//                .formLogin()
+//                .loginPage("/login") //ustawiamy endpoint do naszego kontrolera widoku gdzie mamy strone logowania
+//                .loginProcessingUrl("/signin") //miejsce gdzie przychodzi za[ytanie z formularza html
+//                .usernameParameter("username")
+//                .passwordParameter("password")
+//                .successHandler((res, req, auth) -> { // rozszerzona wersja tego co ponizej
+//                    req.sendRedirect("/pricelist");
+//                })
+//                //  .successForwardUrl("/") //przekierowanie po udanym zalogowaniiu
+//                .failureForwardUrl("/login?error=wrong login or password!")
+//                .permitAll()
+//                .and()
+//                .logout()
+//                .logoutUrl("/logout")
+//                .permitAll(); //wylacznie filtrowania dla logout
+//
+//
+//    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

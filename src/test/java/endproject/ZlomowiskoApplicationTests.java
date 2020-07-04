@@ -7,11 +7,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SpringBootTest
 class ZlomowiskoApplicationTests {
 
-//    @Test
-//    public class PasswordCoder {
+//    public static class PasswordCoder {
+//        public static void main(String[] args) {
 //            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 //            String rawPass = "admin";
 //            System.out.println(passwordEncoder.encode(rawPass));
 //        }
 //
+////
+//    }
 }
