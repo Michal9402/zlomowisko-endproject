@@ -17,6 +17,7 @@ public class Zlom {
     @Column
     private String price;
 
+
     public Long getId() {
         return id;
     }
